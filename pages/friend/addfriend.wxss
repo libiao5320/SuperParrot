@@ -1,0 +1,26 @@
+/* pages/friend/addfriend.wxss */
+
+
+.addfriendcontain {
+
+    width: "100%";
+    padding: 15%;
+    
+    
+    /* margin-top: 100px; */
+    /* margin-left: "15%"; */
+    /* margin-right: "15%" */
+}
+
+
+.formpanel{
+
+  padding: 15px;
+  color:black;
+  /* background-color: black; */
+}
+
+
+input {
+
+}

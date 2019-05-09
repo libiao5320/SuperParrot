@@ -1,0 +1,111 @@
+<!--index.wxml-->
+<view wx:if="{{authBtnShow}}" class="container" >
+<i-modal title="超级鹦鹉记生日需要获取您的用户身份授权" visible="{{ !authModelVisible }}" actions="{{ authModelAction }}" action-mode="{{ vertical }}" bind:click="authModelClick">
+</i-modal>
+<button  type='primary' size='mini' open-type="getUserInfo" bindtap='agreenAuth' >授权</button>
+</view >
+<view wx:else class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+  
+  <view class="contain">
+
+    <view class="navrar">
+
+    <view bindtap='preMonth' class="pre"><span>上一月</span></view>
+						<view class="timelabel" id="timelabel"><span>{{current}}</span></view>
+						<view bindtap='nextMonth' class="next"><span>下一月</span></view>
+    </view>
+  
+    <view class="ophead">
+    <view class="headbar"><span>星期一</span></view>
+							<view class="headbar"><span>星期二</span></view>
+							<view class="headbar"><span>星期三</span></view>
+							<view class="headbar"><span>星期四</span></view>
+							<view class="headbar"><span>星期五</span></view>
+							<view class="headbar"><span>星期六</span></view>
+							<view class="headbar"><span>星期日</span></view>
+    </view>
+
+    <view id="datebar">
+
+     <block wx:for="{{week-1}}">
+        <view class='ddd'>{{""}}</view>
+     </block>
+    
+
+     <block wx:for="{{days}}">
+
+
+        <view wx:if="{{item.isBirthDay == true}}">
+        <i-badge  dot class='dd' style='line-height:0px;'>
+        <view wx:if="{{ today == item.dayNum+1 && nowMonth == chooseMonth && nowYear == chooseYear }}" >
+        <view data-day='{{(item+1 < 10 ? "0" + (item.dayNum+1) :item.dayNum+1)}}' bindtap='getFriendByBirthDay'>今天</view>
+       
+           <!-- {{item.solarDay}} -->
+         <view>{{item.solarDay2}}</view>
+         <!-- {{item.solarDay3}} -->
+          
+        </view>
+       
+         <view wx:else >
+         <view data-day='{{(item+1 < 10 ? "0" + (item.dayNum+1) :item.dayNum+1)}}' bindtap='getFriendByBirthDay'>
+         
+         {{(item+1 < 10 ? "0" + (item.dayNum+1) :item.dayNum+1)}}
+        </view>
+         <!-- {{item.solarDay}} -->
+         <view>
+         {{item.solarDay2}}
+         </view>
+         <!-- {{item.solarDay3}} -->
+         </view>
+          </i-badge>
+          </view>
+
+
+          <view wx:else>
+            <view  class='dddd' >
+            <view wx:if="{{ today == item.dayNum+1 && nowMonth == chooseMonth && nowYear == chooseYear }}" >
+        <view  > 今天</view>
+       
+           <!-- {{item.solarDay}} -->
+         <view >{{item.solarDay2}}</view>
+         <!-- {{item.solarDay3}} -->
+          
+        </view>
+       
+         <view wx:else >
+         <view >
+       
+         {{(item+1 < 10 ? "0" + (item.dayNum+1) :item.dayNum+1)}}
+        </view>
+         <!-- {{item.solarDay}} -->
+         <view >
+         {{item.solarDay2}}
+         </view>
+         <!-- {{item.solarDay3}} -->
+         </view>
+         </view>
+          </view >
+     </block>
+
+    </view>
+
+  </view>
+
+
+  <view class="usermotto" wx:if = "{{ birthDayCount == 0 }}" >
+    <text class="user-motto">您本月没有好友生日哦～</text>
+  </view>
+
+   <view class="usermotto" wx:else >
+    <text class="user-motto">您本月有{{birthDayCount}}位好友生日</text>
+  </view>
+
+
+
+
+</view>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-badge": "../../plugins/iview/dist/badge/index",
+    "i-modal": "../../plugins/iview/dist/modal/index"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+      "pages/friend/friend",
+        "pages/msg/msg",
+                "pages/friend/addfriend",
+          "pages/mine/mine"
+  ],
+  "plugins":{
+    "ui":{
+      "provider":"wx2ca7a9c0f8d4e2b9",
+      "version": "1.0.3"
+    }
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "超级鹦鹉记生日",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+   "color": "#a9b7b7",
+   "selectedColor": "#11cd6e",
+        "borderStyle": "black",
+        "list": [
+      {
+              "pagePath": "pages/index/index",
+              "text": "首页"  
+      },
+      {     
+              "pagePath": "pages/friend/friend",
+              "text": "好友"  
+      },
+        {
+          "pagePath": "pages/msg/msg",
+          "text": "消息"
+        },
+      {   
+              "pagePath": "pages/mine/mine",
+              "text": "个人信息"  
+      }
+
+    ]  
+
+  }
+
+  
+}

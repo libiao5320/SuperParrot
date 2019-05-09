@@ -1,0 +1,86 @@
+<view class="container">
+
+
+
+<block wx:if="{{(isIndexSearch == false && isFromSearch == false ) && (friends == null || friends.length == 0)}}">
+<view class="none-data" >
+    您还没有好友，赶快去添加好友吧
+
+    <i-button bind:click="addFriend" type="primary">点击添加好友</i-button>
+
+    <!-- <button bindtap="addFriend" type='mini' class='.addFriendBtn'>点击添加好友</button> -->
+</view>
+</block>
+<block wx:else>
+<view class="search" >
+
+ <view class="search-bar">
+    <view class="search-wrap">
+        <icon type="search" size="16" class="icon-search" />
+        <input type="text" placeholder="请输入搜索内容" class="search-input" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}" />
+    </view>
+    <view class="search-cancel" bindtap="keywordSearch">搜索</view>
+    <i-button bind:click="addFriend"  type="primary">添加好友</i-button>
+</view>
+
+<view class="search-result" >
+<scroll-view   scroll-y="true" bindscrolltolower="searchScrollLower" >
+
+
+<!-- <view style='float:left;width:100%;'> -->
+<i-cell-group>
+<view style="height:80px;" class='result-item'  wx:for="{{friends}}" wx:key wx:for-index="idx" wx:for-item="friend" >
+
+<i-swipeout style="height:80px;"  operateWidth="{{160}}">
+<view wx:if="{{friend.interval == 0}}" slot="content" style='height:80px;'>
+<i-cell style="height:80px;" title="{{friend.nickName}}" label="{{friend.birthDayType == null ? '阳历' :friend.birthDayType == 1 ? '阳历' : '阴历'}} {{friend.birthday}}" value="今天生日"  >
+
+</i-cell> 
+
+
+</view>
+
+
+<view wx:else slot="content" style='height:80px;'>
+
+<i-cell style="height:80px;" title="{{friend.nickName}}" label="{{friend.birthDayType == null ? '阳历' :friend.birthDayType == 1 ? '阳历' : '阴历'}} {{friend.birthday}}" value="距离生日 {{friend.interval == null ? '0' :friend.interval }} 天"  >
+
+
+</i-cell> 
+
+</view >
+
+<view slot="button" style='float:left;height:100%;padding:0px;' >
+            <!-- <view class="i-swipeout-demo-button">点赞</view> -->
+          <view  class='btnEdit'  size="large" type="default">修改</view>
+           <view class='btnDel' bindtap='delFN' data-friendid="{{friend.id}}"  size="large" type="default">删除</view>
+</view>
+</i-swipeout>
+
+
+</view>
+</i-cell-group>
+<!-- </view> -->
+
+<view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+<view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+
+</scroll-view>
+</view>
+</view>
+</block>
+
+
+
+
+</view>
+
+<i-action-sheet visible="{{ action_visible }}" actions="{{ action_arr }}" show-cancel bind:cancel="handleActionCancel" bind:click="handleActionClickItem" mask-closable="{{ false }}">
+    <view slot="header" style="padding: 16px">
+        <view style="color: #444;font-size: 16px">确定吗？</view>
+        <text>删除后无法恢复哦</text>
+    </view>
+</i-action-sheet>
+
+
+<i-message id="message" />

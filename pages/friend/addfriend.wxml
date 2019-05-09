@@ -1,0 +1,61 @@
+<view class="container" style='padding:0 20px;'>
+
+
+  <view class='addfriendcontain'>
+  <form bindsubmit="addFriend" bindreset="formReset">
+    <i-panel title="添加好友信息" i-class="formpanel">
+    <i-input  type="text" name="nickName" title="姓名" autofocus placeholder="名字"  maxlength="50"/>
+    <i-input  type="number"    title="联系电话" placeholder="请输入手机号" maxlength='11' />
+    <i-input  type="textarea"  name="friendName"  title="详细地址" placeholder="请输入详细地址(最多50字)" maxlength="50" />
+ 
+    <!-- <i-switch value="性别" title="性别">
+         
+    </i-switch> -->
+<!--   
+    <i-input type="text" title="生日" maxlength='16' />
+
+
+    <picker mode="date" value="{{date}}" start="1900-01-01" end="2050-12-31" bindchange="changeDate"> -->
+
+
+    <view >
+
+  <picker mode="date" value="{{date}}" start="1900-01-01" end="2050-12-31" bindchange="bindbirthDayChange">
+      <i-input  type="text" disabled='true' name="birthday" title="生日" value='{{birtyDay}}'  maxlength="50"/>
+  </picker>
+</view>
+
+
+ 
+
+
+ <i-cell-group>
+    <i-cell title="性别">
+        <i-switch  style='float:left;' value="{{sexSwitch}}" bind:change="sexChange"  slot="footer">
+            <view slot="open"  value="1">男</view>
+            <view slot="close" value="0">女</view>
+        </i-switch>
+    </i-cell>
+<i-cell title="生日类型">
+        <i-switch  style='float:left;'  value="{{birtyDayTypeSwitch}}" bind:change="sexBirthDayTypeChange"  slot="footer">
+            <view slot="open"  value="1">阳历</view>
+            <view slot="close" value="0">阴历</view>
+        </i-switch>
+    </i-cell>
+     
+    </i-cell-group>
+
+
+    <!-- <i-input value="{{ value4 }}" title="用户信息" disabled /> -->
+    <view style='float:right;'>
+        <button form-type="submit" style="float:left;margin-right:5px;" size='mini'>提交</button>
+    <button form-type="reset" size='mini' style='margin-right:4px;'>重置</button>
+    </view>
+</i-panel>
+       <!-- <view class="btn-area" style='padding:20%'>
+
+  </view> -->
+  </form>
+  </view>
+
+</view>

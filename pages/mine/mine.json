@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-card": "../../plugins/iview/dist/card/index",
+      "i-cell-group": "../../plugins/iview/dist/cell-group/index",
+      "i-cell": "../../plugins/iview/dist/cell/index"
+  }
+}

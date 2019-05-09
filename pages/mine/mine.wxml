@@ -1,0 +1,23 @@
+<!--mine.wxml-->
+<view class="container">
+<view style='float:left;width:100%;'>
+<i-card  extra="{{userInfo.nickName}}" thumb="{{userInfo.avatarUrl}}">
+    <!-- <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view> -->
+</i-card>
+
+
+
+</view>
+
+
+
+<view style='float:left;width:100%;'>
+<i-cell-group>
+<i-cell title="修改"  is-link></i-cell>
+<i-cell title="邀请好友填写生日信息" is-link >
+<button open-type='share' class='sharebtn' ></button> 
+</i-cell>
+</i-cell-group>
+</view>
+</view>

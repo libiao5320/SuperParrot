@@ -1,0 +1,177 @@
+/* pages/friend/friend.wxss */
+
+
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.firendContain {
+
+    width: "100%";
+    padding: 15px;
+    margin-top: 200px;
+    margin-left: "15%";
+    margin-right: "15%";
+      flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+/* 
+.friendlabel {
+
+  height:132px;
+
+  width: 100%;
+} */
+
+.addFriendBtn {
+
+    width: 150px;
+    padding: 2px;
+    margin-top:10px;
+
+
+}
+
+
+.none-data {
+
+  padding-top:50%;
+  align-items: center;
+
+}
+
+/*搜索*/
+.search{
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 100%;
+}
+.search-bar{
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  background: #f4f4f4;
+}
+.search-wrap{
+  position: relative;
+  flex: auto;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  border-radius: 6rpx;
+}
+.search-wrap .icon-search{
+  margin-right: 10rpx;
+}
+.search-wrap .search-input{
+  flex: auto;
+  font-size: 28rpx;
+}
+.search-cancel{
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.search{
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+
+/*搜索结果*/
+.search-result{
+  flex: auto;
+  position: relative;
+}
+.search-result scroll-view{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+
+.result-item{
+
+  overflow: hidden;
+  border-bottom: 2rpx solid #e5e5e5;
+  height: 50;
+  line-height: 50;
+}
+
+
+
+.loading{
+  padding: 10rpx;
+  text-align: center;
+}
+.loading:before{
+  display: inline-block;
+  margin-right: 5rpx;
+  vertical-align: middle;
+  content: '';
+  width: 40rpx;
+  height: 40rpx;
+  /* background: url(../../images/icon-loading.png) no-repeat; */
+  background-size: contain;
+  animation: rotate 1s linear infinite;
+}
+.loading.complete:before{
+  display: none;
+}
+
+.scroll-view-item{
+
+  height: 90px;
+}
+
+.btnEdit{
+
+
+
+  margin-top: 20rpx;
+
+  color: whitesmoke;
+  
+  border-radius: 0rpx;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  font-size: 30rpx;
+     border: 0;
+    background-color: #24998d;
+    width:80px;height:80px;margin:0;float:left;  align-items: center;
+    
+
+}
+.btnDel{
+  margin-top: 20rpx;
+
+  color: whitesmoke;
+  border-radius: 0rpx;
+  display: flex;
+  flex-direction: column;
+ border: 0;
+  justify-content: center;
+  font-size: 30rpx;
+    background-color: #eb4310;
+  width:80px;height:80px;margin:0;float:left;  align-items: center;
+  
+
+}
+
+

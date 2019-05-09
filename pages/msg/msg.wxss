@@ -1,0 +1,7 @@
+/* pages/msg/msg.wxss */
+
+.msgcontain {
+    width: "100%";
+    padding: 15px;
+    margin-top: 200px;
+}
